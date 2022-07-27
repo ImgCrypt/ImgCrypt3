@@ -1,0 +1,49 @@
+<MyRoot>:
+
+    image: image
+    encode_button: encode_button
+    decode_button: decode_button
+    process_button: process_button
+    text_box: text_box
+    file_chooser: file_chooser
+    BoxLayout:
+
+        orientation: 'vertical'
+        Label:
+            text: "Press a butto33333333333n to open an image"
+            font_size: 22
+            size_hint: (.1,.1)
+            pos_hint: ({'x':.45})
+        FileChooserListView:
+            id: file_chooser
+            size_hint: (.8,.6)
+            pos_hint: ({'x':.1,'y':.1})
+
+        Button:
+            id: encode_button
+            text: "Encode"
+            size_hint: (.8,.1)
+            pos_hint: ({'x':.1,'y':0})
+            on_press: root.open_encode()
+        Button:
+            id: decode_button
+            text: "Decode"
+            size_hint: (.8,.1)
+            pos_hint: ({'x':.1,'y':-.1})
+            on_press: root.open_encode()
+
+        TextInput:
+            id:text_box
+            size_hint: (.8,.8)
+            pos_hint: ({'x':-.1})
+            size_hint: (.00000000000000000001,.0000000000000000000000001)
+        Button:
+            id: process_button
+            text: "Process"
+            size_hint: (.8,.1)
+            pos_hint: ({'x':-1,'y':-.1})
+            on_press: root.process_decode()
+        Image:
+            id:image
+            size_hint: (0,0)
+            pos_hint: ({"x":.3})

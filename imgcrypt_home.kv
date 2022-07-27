@@ -1,0 +1,70 @@
+<MyRoot>:
+    label: label
+    image: image
+    back_button: back_button
+    encode_button: encode_button
+    decode_button: decode_button
+    process_button: process_button
+    process_button_dec: process_button_dec
+    text_box: text_box
+    file_chooser: file_chooser
+
+    BoxLayout:
+        imgcrypt_encoder:
+
+        orientation: 'vertical'
+        Label:
+            text: "Press a button to open an image"
+            font_size: 32
+            size_hint: (.1,.1)
+            pos_hint: ({'x':.45})
+            id: label
+        Button:
+            background_color: (0,1,1,1)
+            id: back_button
+            text: "Back"
+            size_hint: (.2,.025)
+            pos_hint: ({'x':.1,'y':0})
+            on_press: root.back()
+        FileChooserListView:
+            id: file_chooser
+            size_hint: (.8,.6)
+            pos_hint: ({'x':.1})
+
+        Button:
+            background_color: (0,1,1,1)
+            id: encode_button
+            text: "Encode"
+            size_hint: (.8,.1)
+            pos_hint: ({'x':.1,'y':0})
+            on_press: root.open_encode()
+        Button:
+            background_color: (0,1,1,1)
+            id: decode_button
+            text: "Decode"
+            size_hint: (.8,.1)
+            pos_hint: ({'x':.1,'y':-.1})
+            on_press: root.open_decode()
+
+        TextInput:
+            id:text_box
+            size_hint: (.8,.6)
+            pos_hint:({'x':.1})
+        Button:
+            background_color: (0,1,1,1)
+            id: process_button
+            text: "Process"
+            size_hint: (.8,.1)
+            pos_hint: ({'x':.1})
+            on_press: root.process_encode()
+        Button:
+            background_color: (0,1,1,1)
+            id: process_button_dec
+            text: "Process"
+            size_hint: (.8,.1)
+            pos_hint: ({'x':.1})
+            on_press: root.process_decode()
+        Image:
+            id:image
+            size_hint: (0,0)
+            pos_hint: ({"x":.3})
